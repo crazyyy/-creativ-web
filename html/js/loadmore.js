@@ -1,0 +1,2 @@
+"use strict";jQuery(function(r){r("#true_loadmore").click(function(){r(this).text("Загружаю...");var e={action:"loadmore",query:true_posts,page:current_page};r.ajax({url:ajaxurl,data:e,type:"POST",success:function(e){e?(r("#true_loadmore").text("Загрузить ещё").before(e),current_page++,current_page==max_pages&&r("#true_loadmore").remove()):r("#true_loadmore").remove()}})})});
+//# sourceMappingURL=maps/loadmore.js.map

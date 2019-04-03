@@ -1,0 +1,17 @@
+@import "materialize.min";
+@import "style";
+@import "css";
+@import "wp-featherlight.min";
+
+
+.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.site-title,
+.site-description {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}

@@ -75,8 +75,9 @@
                 <div data-post-id="40" class="insert-page insert-page-40 ">
                   <?php if ( have_rows('videos') ) : ?>
                     <?php while( have_rows('videos') ) : the_row(); ?>
-                      <p><?php the_sub_field('title'); ?><br>
-                        <div class="embed-container"><?php the_sub_field('iframe'); ?></div>
+                      <p>
+                        <?php the_sub_field('title'); ?><br>
+                        <?php the_sub_field('iframe'); ?>
                       </p>
                     <?php endwhile; ?>
                   <?php endif; ?>

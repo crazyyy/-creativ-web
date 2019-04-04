@@ -84,45 +84,55 @@ $(document).ready(function () {
 
   initBannerVideoSize('.video-container .poster img');
   initBannerVideoSize('.video-container .filter');
-  // initBannerVideoSize('.video-container video');
+  initBannerVideoSize('.video-container video');
 
   $(window).on('resize', function () {
     scaleVideoContainer();
     scaleBannerVideoSize('.video-container .poster img');
     scaleBannerVideoSize('.video-container .filter');
-    // scaleBannerVideoSize('.video-container video');
+    scaleBannerVideoSize('.video-container video');
   });
 
 });
 
 /** Reusable Functions **/
 /********************************************************************/
+
 function scaleVideoContainer() {
+
   var height = $(window).height();
   var unitHeight = parseInt(height) + 'px';
+
   $('.homepage-hero-module').css('height', unitHeight);
+
 }
 
 function initBannerVideoSize(element) {
+  console.log(element)
   $(element).each(function () {
     $(this).data('height', $(this).height());
     $(this).data('width', $(this).width());
   });
+
   scaleBannerVideoSize(element);
+
 }
 
 function scaleBannerVideoSize(element) {
+
   var windowWidth = $(window).width(),
     windowHeight = $(window).height(),
     videoWidth,
-    videoHeight;
+    videoHeight,
+    videoWidth2;
 
-  // console.log(windowHeight);
+  console.log(windowHeight);
 
   $(element).each(function () {
-    console.log(element)
-    var videoAspectRatio = $(this).data('height') / $(this).data('videoWidth'),
+    var videoAspectRatio = $(this).data('height') / $(this).data('width'),
       windowAspectRatio = windowHeight / windowWidth;
+
+
     if (videoAspectRatio > windowAspectRatio) {
       videoWidth = windowWidth;
       videoWidth2 = videoWidth / 100;
@@ -142,9 +152,14 @@ function scaleBannerVideoSize(element) {
     }
 
     $(this).width(videoWidth + videoWidth2).height(videoHeight);
+
     $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+
   });
 }
+
+
 
 jQuery(document).ready(function ($) {
   var $all_oembed_videos = $("iframe[src*='youtube'], iframe[src*='vimeo']");

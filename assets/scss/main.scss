@@ -3,7 +3,6 @@
 @import "css";
 @import "wp-featherlight.min";
 
-
 .recentcomments a {
   display: inline !important;
   padding: 0 !important;
@@ -14,4 +13,17 @@
 .site-description {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
+}
+
+.w-background-video {
+  height: 100vh;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  // height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
 }

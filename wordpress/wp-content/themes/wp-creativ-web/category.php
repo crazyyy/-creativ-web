@@ -1,10 +1,20 @@
 <?php get_header(); ?>
-  <article>
 
-    <h1 class="cat-title inner-title"><?php the_category(', '); ?></h1>
-    <?php get_template_part('loop'); ?>
-    <?php get_template_part('pagination'); ?>
+  <main>
+    <div class="row">
+      <div class="col s12 m12 l5 xl5">
+        <div class="d-wrapper">
 
-  </article>
-<?php get_sidebar(); ?>
+            <div id="d-theatre" class="d-theatre section scrollspy" style="display: block;">
+              <h5 class="center-align res-p"><?php the_category(', '); ?></h5>
+              <?php get_template_part('loop'); ?>
+              <?php get_template_part('pagination'); ?>
+            </div>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
 <?php get_footer(); ?>
